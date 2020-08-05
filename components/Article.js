@@ -104,17 +104,18 @@ function articleMaker(articleObj) {
   article.appendChild(expandButton);
 
   article.classList.add("article");
-  title.classList.add("h2");
-  date.classList.add("p");
-  articleContent.classList.add("p");
+  date.classList.add("data");
+  // articleContent.classList.add("");
   expandButton.classList.add("expandButton");
 
   title.textContent = `${articleObj.title}`;
   date.textContent = `${articleObj.date}`;
   articleContent.textContent = `${articleObj.firstParagraph} \n ${articleObj.secondParagraph} \n ${articleObj.thirdParagraph}`;
-  expandButton.textContent = "+";
+  expandButton.textContent = `+`;
 
-  const expand = document.querySelector(".expandButton");
+  expandButton.addEventListener("click", (event) => {
+    article.classList.toggle("article-open");
+  });
 
   return article;
 }
