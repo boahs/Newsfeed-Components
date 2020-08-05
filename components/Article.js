@@ -89,6 +89,14 @@ const data = [
   },
 ];
 
+const test = [
+  {
+    title: "Sha",
+    date: "Jan 9th, 2015",
+    Paragraph: "hello",
+  },
+];
+
 const articles = document.querySelector(".articles");
 
 function articleMaker(articleObj) {
@@ -120,6 +128,9 @@ function articleMaker(articleObj) {
   return article;
 }
 
+// articleMaker({ data });
+// debugger;
+// calling^
 data.forEach((objData) => {
   const article = articleMaker(objData);
   articles.appendChild(article);
